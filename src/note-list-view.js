@@ -4,16 +4,18 @@ class NoteListView {
     }
 
     returnListView() {
-        return this.noteList.returnList()
+        return this.noteList.returnList();
     }
 
 
     outputToHtml() {
-        var listView = this.returnListView()
-        var html = ""
-        for (var i = 0; i <= listView.length; i++) {
-            html += "<ul><li><div>" + listView[i] + "</div></li></ul>"
+        var listView = this.returnListView();
+        var html = []
+
+        for (var i = 0; i < listView.length; i++) {
+            html.push("<li><div>" + listView[i] + "</div></li>")
         }
-        return html
+
+        return ("<ul>" + html.join("") + "</ul>")
     }
 }
